@@ -2,7 +2,7 @@
     # set up a virtual environment (python -m venv env)
     # install the requirements.txt file (pip install -r requirements.txt) 
     # create a .env file with OPENAI_API_KEY
-    # run the app.py file (python -m app.py)
+    # run the app.py file (python -m app)
     # go to the local server and upload a document 
     # select the search terms 
     # run the analysis 

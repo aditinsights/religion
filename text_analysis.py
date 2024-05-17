@@ -27,8 +27,6 @@ api_key = os.getenv("OPENAI_API_KEY")
 #%% file to investigate found here
 # pdf_dir = os.path.join('.', 'data', 'bias')  # replace with the correct directory
 
-# #%% set upclasses 
-#
 def text_analysis(pdf_dir, pdf_loader, bias_tool, doc_analysis, search_words): 
     print(f"PDF Directory: {pdf_dir}")
 

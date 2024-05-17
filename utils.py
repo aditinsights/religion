@@ -94,12 +94,12 @@ class DocumentAnalysis:
             text = document['page_content']  # Assuming document has page_content attribute
             response = client.embeddings.create(
                 input=text, 
-                model="text-embedding-3-large"  # Using "ada" for demonstration, adjust as needed
+                model="text-embedding-3-large"  
             )
             embed.append(response.data[0].embedding)
         return embed
 
-    def find_biased_chunks(self, chunks, chunk_embeddings, keyword_embeddings, threshold=0.50):
+    def find_biased_chunks(self, chunks, chunk_embeddings, keyword_embeddings, threshold=0.40):
         results = []
         print(f"Length of chunks: {len(chunks)}")
         print(f"Length of chunk_embeddings: {len(chunk_embeddings)}")
@@ -149,7 +149,7 @@ class DocumentAnalysis:
         return results
 
 
-# #%%
+#%% testing 
 # pdf_dir = r'./data/bias'    
 # pdf_loader = PDFLoad(pdf_dir)
 # documents = pdf_loader.convert_pdfs_to_text()
