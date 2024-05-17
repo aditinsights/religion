@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Analysis Results</title>
+</head>
+<body>
+<h1>Analysis Results</h1>
+<ul>
+    {% for result in results %}
+        {% if result is string %}
+            <li>{{ result }}</li>
+        {% else %}
+            <li>
+                <strong>Page: </strong> {{ result.page_number }} <br>
+                <strong>Text: </strong> {{ result.text }}<br>
+                <strong>Keyword:</strong> {{ result.keyword }}<br>
+                <strong>Bias Answer:</strong> {{ result.bias_answer }}
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Select Keywords and Analysis Type</title>
+</head>
+<body>
+<h1>Select Keywords and Analysis Type</h1>
+<form action="/select_keywords?pdf_dir={{ pdf_dir }}&pdf_file_path={{ pdf_file_path }}" method="post">
+    <label for="keywords">Keywords (comma-separated):</label>
+    <input type="text" id="keywords" name="keywords">
+    <br>
+    <label for="analysis_type">Analysis Type:</label>
+    <select id="analysis_type" name="analysis_type">
+        <option value="embedding">Embedding</option>
+        <option value="text">Text Analysis</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
