@@ -48,8 +48,8 @@ def embeddings_analysis(chunk_embeddings, documents, doc_analysis, keywords, key
     print(f"Total chunks created: {len(chunks)}")
 
     # Find biased chunks using the revised function
-    biased_chunks = doc_analysis.find_biased_chunks(chunks, chunk_embeddings, keyword_embeddings, threshold)
-    #biased_chunks = doc_analysis.find_bias_faiss(chunks, chunk_embeddings, keywords, keyword_embeddings, threshold)
+    #biased_chunks = doc_analysis.find_biased_chunks(chunks, chunk_embeddings, keyword_embeddings, threshold)
+    biased_chunks = doc_analysis.find_bias_faiss(chunks, chunk_embeddings, keywords, keyword_embeddings, threshold)
     if biased_chunks:
         print(f"Found {len(biased_chunks)} biased chunks.")
         # Collect the biased chunks for each document

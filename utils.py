@@ -8,19 +8,21 @@ import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize
 from tqdm import tqdm
 import faiss
-
 from sklearn.metrics.pairwise import cosine_similarity
 from tqdm import tqdm
+from dotenv import load_dotenv
 
-
+load_dotenv()
 nltk.download('punkt')
 
 import openai
 from openai import OpenAI
 import os
+import dotenv 
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI()
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+# print(openai.api_key)
+client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
 
 #%%
 class BiasGPT: 
@@ -134,7 +136,7 @@ class DocumentAnalysis:
         for i, chunk_embedding in enumerate(chunk_embeddings):
             chunk_embedding = chunk_embedding.reshape(1, -1)
             faiss.normalize_L2(chunk_embedding)  # Normalize chunk embedding for cosine similarity
-            distances, indices = index.search(chunk_embedding, 1)  # Search for the nearest neighbor
+            distances, indices = index.search(chunk_embedding, 10)  # Search for the nearest neighbor
             score = 1 - distances[0][0]  # Convert L2 distance to cosine similarity
             if score >= threshold:
                 keyword_index = indices[0][0]

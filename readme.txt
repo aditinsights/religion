@@ -31,3 +31,10 @@
     # can set up the functions that run the analysis here
 
 
+# Ideas to "Build Your Own" Bias Detector 
+    # Three steps: 
+        # Gather data + annotate it - types of bias, etc. This becomes your "gold" standard. ~ 500 instances per class of bias is a good target. 
+        # Train a model to detect bias - classification model trying multiple techniques such as log reg, XGBoost, or a neural network
+        # Check stats - precision, recall, F1 score, to avoid overfitting and other errors in data. 
+
+        
